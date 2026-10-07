@@ -52,8 +52,6 @@ class GameEngine:
         self.cars=[c for c in self.cars if not c.off_screen(HEIGHT)]
         self.score+=1
         if self.score%300==0: self.speed=min(10,self.speed+0.5)
-        if self.player.rect.top<=10:
-            self.won=True
 
     def draw(self):
         self.screen.fill(BG)
