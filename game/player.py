@@ -14,12 +14,16 @@ class Player:
             self.move_cooldown-=1
             return
         dx=dy=0
-        if keys[pygame.K_LEFT] or keys[pygame.K_a]: dx=-LANE_W
-        if keys[pygame.K_RIGHT] or keys[pygame.K_d]: dx=LANE_W
-        if keys[pygame.K_UP] or keys[pygame.K_w]: dy=-8
-        if keys[pygame.K_DOWN] or keys[pygame.K_s]: dy=8
+        if keys[pygame.K_LEFT] or keys[pygame.K_a]: 
+            dx=-LANE_W
+        elif keys[pygame.K_RIGHT] or keys[pygame.K_d]: 
+            dx=LANE_W
+        elif keys[pygame.K_UP] or keys[pygame.K_w]: 
+            dy=-8
+        elif keys[pygame.K_DOWN] or keys[pygame.K_s]: 
+            dy=8
         nx=max(min_x,min(max_x-self.rect.width,self.rect.x+dx))
-        ny=max(0,self.rect.y+dy)
+        ny=max(30,self.rect.y+dy)
         if dx: self.rect.x=nx; self.move_cooldown=12
         if dy: self.rect.y=ny
 
